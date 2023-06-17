@@ -6,23 +6,23 @@
 - Penguasaan keseluruhan Source Code: 20%
 
 ## Materi yang harus ada didalam Code:
-- Class & Object !!Done
+- Class & Object !#!Done
 - Constructor 
-- Access Modifier !!Done
-- Encapsulation !!Done
+- Access Modifier !#!Done
+- Encapsulation !#!Done
 - Inheritance
 - Polimorfisme
-- Abstraction !!Done
-- ArrayList !!Done
+- Abstraction !#!Done
+- ArrayList !#!Done
 
 ## Jalur Program
-- Show List (Insert untuk masukan list yang dipilih) !!Done
-- CRUD dalam Program (Create Read Update Delete) !!Done
-- Return Fiture !!Done
-- Add ke dalam Boarding Pass (Create) !!Done
-- Menunjukan siapa saja yang ada di Boarding Pass tersebut (Read) !!Done
-- Mengubah data yang sudah memesan Boarding Pass (Update) !!Done
-- Menghapus yang sudah memesan Boarding Pass(Delete) !!Done
+- Show List (Insert untuk masukan list yang dipilih) !#!Done
+- CRUD dalam Program (Create Read Update Delete) !#!Done
+- Return Fiture !#!Done
+- Add ke dalam Boarding Pass (Create) !#!Done
+- Menunjukan siapa saja yang ada di Boarding Pass tersebut (Read) !#!Done
+- Mengubah data yang sudah memesan Boarding Pass (Update) !#!Done
+- Menghapus yang sudah memesan Boarding Pass(Delete) !#!Done
 
 ## Rencana Pembuatan
 - Menggunakan Arraylist dan extend abstract

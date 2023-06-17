@@ -1,4 +1,7 @@
 package Project;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.Scanner;
 
 public class Main {
@@ -6,13 +9,39 @@ public class Main {
     static Scanner scan = new Scanner(System.in);
     static backside backside = new backside();
 
-    public static void main (String[] args){
+    public static void main (String[] args) throws FileNotFoundException{
 
       initTicket();  
       String isContinue= "y";
 
-//coba bikin login admin kalok bisa
-//jadi admin harus login terlebih dahulu untuk melakukan perubahan pada locket ticket
+boolean ulang = true;
+		
+		String listUsername;
+		String listPassword;
+		
+		while (ulang) {
+			System.out.print("Masukkan username: ");
+			String usernameInput = scan.nextLine();
+			System.out.print("Masukkan password: ");
+			String passwordInput = scan.nextLine();
+			
+			FileReader fr = new FileReader("C:\\Users\\asust\\OneDrive\\Documents\\GitHub\\Project-UAS-PBO\\Project\\admin.txt");
+			BufferedReader br = new BufferedReader(fr);
+			try (Scanner scanFile = new Scanner(br)) {
+        while(scanFile.hasNext()) {
+        	scanFile.useDelimiter(",|\\n");
+        	listUsername = scanFile.next().trim();
+        	listPassword = scanFile.next().trim();
+        	
+        	if (usernameInput.equals(listUsername) && passwordInput.equals(listPassword)) {
+        		System.out.println("Username dan password benar!");
+        		ulang = false;
+        		break;
+        	}
+          System.out.println("Username/Password anda salah");
+        }
+      }
+		}	
 
     while (isContinue.equals("y")) {
         showMenu();
@@ -20,15 +49,15 @@ public class Main {
         int selectedMenu = chooseMenu();
           try {
             if (selectedMenu == 1) {
-              showTicket(); //done    || Bagian dari Read
+              showTicket(); //done 100%     || Bagian dari Read
             } else if (selectedMenu == 2) {
-              addTicket(); //done     || Bagian dari Create
+              addTicket(); //done  100%     || Bagian dari Create
             } else if (selectedMenu == 3) {
-              removeTicket(); //done  || Bagian dari Delete(masuk ke update juga sih(?))
+              removeTicket(); //done 100%   || Bagian dari Delete(masuk ke update juga sih(?))
             } else if (selectedMenu == 4) {
-              ubahTicket(); //done    || Bagian dari Update
+              ubahTicket(); //done  100%    || Bagian dari Update
             } else if (selectedMenu == 5) {
-              tujuanTicket(); //bikin dia bisa liat list berdasarkan tujuan keberangkatan
+              tujuanTicket(); //done 100%   || Melihat ticket berdasarkan tujuan
             } else if (selectedMenu == 6){
               break;
             } else {
@@ -71,12 +100,14 @@ public class Main {
     }
 
     public static void showMenu(){
+        System.out.println("------------------------------");
         System.out.println("| 1. Show Ticket");
         System.out.println("| 2. Add Ticket");
         System.out.println("| 3. Remove Ticket");
         System.out.println("| 4. Ubah Ticket");
         System.out.println("| 5. Tujuan Ticket");
         System.out.println("| 6. Exit Program");
+        System.out.println("-----------------------------");
     }
 
     //untuk inputan pilihan Menu (While diatas)

@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class backside extends ticket {
     
     public ArrayList<ticket> tickets = new ArrayList<>();
-    // public ArrayList<penumpang> penumpangs = new ArrayList<>();
+
     public String id;
     public String nama;
     public String tujuan;
