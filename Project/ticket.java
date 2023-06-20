@@ -8,6 +8,10 @@ abstract class ticket {
     private int jumlah;
     private int harga;
     
+    public ticket(){
+
+    }
+    
     public void setId(String id) {
         this.id = id;
     }
@@ -47,7 +51,10 @@ abstract class ticket {
     public int getHarga() {
         return harga;
     }
-        
-    public abstract void addTicket(ticket ticket);
+    
+    //Overriding sama addTicket di backside
+    public void addTicket(ticket ticket){
+
+    }
 
 }

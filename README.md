@@ -10,8 +10,8 @@
 - Constructor 
 - Access Modifier !#!Done
 - Encapsulation !#!Done
-- Inheritance
-- Polimorfisme
+- Inheritance !#!Done
+- Polimorfisme !#!Done
 - Abstraction !#!Done
 - ArrayList !#!Done
 

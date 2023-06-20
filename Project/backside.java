@@ -5,6 +5,9 @@ public class backside extends ticket {
     
     public ArrayList<ticket> tickets = new ArrayList<>();
 
+    public backside() {
+    }
+
     public String id;
     public String nama;
     public String tujuan;
