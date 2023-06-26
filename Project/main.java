@@ -2,14 +2,14 @@ package Project;
 import java.util.Scanner;
 
 public class Main {
-    
-    static Scanner scan = new Scanner(System.in);
-    static backside backside = new backside();
+  
+  static Scanner scan = new Scanner(System.in);
+  static backside backside = new backside();
+  
+  public static void main (String[] args) {
+    String isContinue= "y";
 
-    public static void main (String[] args) {
-
-      initTicket();  
-      String isContinue= "y";
+    initTicket();  
 
     while (isContinue.equals("y")) {
         showMenu();
@@ -41,34 +41,20 @@ public class Main {
 
     public static void initTicket(){
       
-      ticket ticket1 = new backside();
-        ticket1.setId("1");
-        ticket1.setNama("wahyudi");
-        ticket1.setTujuan("Nusa Lembongan");
-        ticket1.setJumlah(2);
-        ticket1.setHarga(150000);
+      //objek
+        ticket ticket1 = new backside("1","wahyudi","Nusa Lembongan",2,150000);
         backside.tickets.add(ticket1);
 
-        ticket ticket2 = new backside();
-        ticket2.setId("2");
-        ticket2.setNama("Sudia");
-        ticket2.setTujuan("Nusa Lembongan");
-        ticket2.setJumlah(1);
-        ticket2.setHarga(75000);
+        ticket ticket2 = new backside("2","sudia","Nusa Lembongan",1,75000);
         backside.tickets.add(ticket2);
 
-        ticket ticket3 = new backside();
-        ticket3.setId("3");
-        ticket3.setNama("RaviEL");
-        ticket3.setTujuan("Nusa Penida");
-        ticket3.setJumlah(4);
-        ticket3.setHarga(300000);
+        ticket ticket3 = new backside("3","RaviEL","Nusa Penida",4,300000);
         backside.tickets.add(ticket3);
       
     }
 
     public static void showMenu(){
-        System.out.println("------------------------------");
+        System.out.println("-----------------------------");
         System.out.println("| 1. Show Ticket");
         System.out.println("| 2. Add Ticket");
         System.out.println("| 3. Remove Ticket");
@@ -184,6 +170,7 @@ public class Main {
     do {
       System.out.print("Pilih Tujuan Keberangkatan diatas : ");
     tujuan = scan.nextInt();
+    //akan melakukan forEach untuk setiap data ArrayList, dan yang memiliki nilai setara akan dicetak
     for (ticket ticket : backside.tickets) {
         if (tujuan == 1 && ticket.getTujuan().equals("Nusa Penida")) {
             backside.printTicket(ticket);
@@ -193,7 +180,7 @@ public class Main {
             backside.printTicket(ticket);
         }
     }
-    scan.nextLine(); //Menangani karakter baru setelah nextInt()
+    scan.nextLine(); //Menangani karakter baru setelah membaca inputan int
     } while (tujuan != 1 && tujuan != 2 && tujuan != 3);
 
   }

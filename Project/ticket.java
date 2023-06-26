@@ -1,5 +1,6 @@
 package Project;
 
+//Inheritance parent dan abstract class
 abstract class ticket {
 
     private String id;
@@ -7,11 +8,17 @@ abstract class ticket {
     private String tujuan;
     private int jumlah;
     private int harga;
-    
-    public ticket(){
 
+    //constructor ticket dari abtract
+    public ticket (String id, String nama, String tujuan, int jumlah, int harga){
+      this.id=id;
+      this.nama=nama;
+      this.tujuan=tujuan;
+      this.jumlah=jumlah;
+      this.harga=harga;
     }
-    
+
+    //encapsulation setter
     public void setId(String id) {
         this.id = id;
     }
@@ -32,29 +39,28 @@ abstract class ticket {
         this.harga = harga;
     }
 
+    //encapsulation getter
     public String getId() {
-        return id;
+        return this.id;
     }
     
     public String getNama() {
-        return nama;
+        return this.nama;
     }
 
     public String getTujuan() {
-        return tujuan;
+        return this.tujuan;
     }
 
     public int getJumlah() {
-        return jumlah;
+        return this.jumlah;
     }
 
     public int getHarga() {
-        return harga;
+        return this.harga;
     }
     
     //Overriding sama addTicket di backside
-    public void addTicket(ticket ticket){
-
-    }
+    public abstract void addTicket(ticket ticket);
 
 }
