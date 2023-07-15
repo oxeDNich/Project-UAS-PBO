@@ -122,24 +122,7 @@ public class Main {
     System.out.print("Jumlah Ticket yang ingin dibeli : ");
     int jumlah = scan.nextInt();
     int harga = jumlah*75000;
-    if (jumlah >= 5) {
-       if( jumlah >= 10){
-          System.out.println("Anda mendapatkan diskon 10%");
-          ticket.setJumlah(jumlah);
-          int diskon = harga - (harga*10/100);
-          ticket.setHarga(diskon);
-          System.out.println("Harga sebelumnya "+ harga + " Menjadi : " +diskon);
-          } else {
-          System.out.println("Anda mendapatkan diskon 5%");
-          ticket.setJumlah(jumlah);
-          int diskon = harga - (harga*5/100);
-          ticket.setHarga(diskon);
-          System.out.println("Harga sebelumnya "+ harga + " Menjadi : " +diskon);
-          } }
-          else {
-          ticket.setJumlah(jumlah);
-          ticket.setHarga(harga);
-          }
+    backside.PerhitunganDiskon(ticket, jumlah, harga);
 
     //inputan dikirim ke addTicket
     backside.addTicket(ticket);
@@ -150,9 +133,9 @@ public class Main {
     String id = scan.nextLine();
 
     System.out.print("Masukan jumlah ticket yang ingin dihapus : ");
-    int jumlah = scan.nextInt();
+    int jumlahSebelum = scan.nextInt();
 
-    backside.ubahTicket(id,jumlah);
+    backside.ubahTicket(id,jumlahSebelum);
   }
 
   public static void ubahTicket(){
